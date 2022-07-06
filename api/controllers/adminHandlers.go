@@ -2,7 +2,8 @@ package controllers
 
 import (
 	"context"
-	"crudapp/pkg/models"
+	"crudapp/models"
+
 	"fmt"
 	"html/template"
 	"net/http"
@@ -81,18 +82,13 @@ func AdminLogin(w http.ResponseWriter, r *http.Request) {
 	session.Save(r, w)
 
 	//open admin home page after validation
-	// data := map[string]any{
-	// 	"username": username,
-	// }
-	// adminTemp.ExecuteTemplate(w, "adminHome.html", data)
 	http.Redirect(w, r, "/admin/adminHome", http.StatusSeeOther)
 
 }
 
 func AdminHome(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Cache-Control", "no-cache,no-store,must-revalidate")
-	// params := mux.Vars(r)
-	// username := params["username"]
+
 	username := r.FormValue("username")
 
 	if c, err := r.Cookie(username); err == http.ErrNoCookie {
@@ -184,7 +180,6 @@ func AddUser(w http.ResponseWriter, r *http.Request) error {
 func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	id, _ := strconv.Atoi(params["id"])
-	// deleteUser(int64(id))
 
 	db := models.OpenDb()
 	defer func() {

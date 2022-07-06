@@ -2,14 +2,13 @@ module crudapp
 
 go 1.18
 
-require github.com/gorilla/mux v1.8.0 // direct
-
 require (
+	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/sessions v1.2.1
 	github.com/joho/godotenv v1.4.0
-	golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4
-	gorm.io/driver/postgres v1.3.7
-	gorm.io/gorm v1.23.5
+	golang.org/x/crypto v0.0.0-20220622213112-05595931fe9d
+	gorm.io/driver/postgres v1.3.8
+	gorm.io/gorm v1.23.7
 )
 
 require (
@@ -24,7 +23,5 @@ require (
 	github.com/jackc/pgx/v4 v4.16.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.4 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
-	github.com/stretchr/testify v1.7.2 // indirect
 	golang.org/x/text v0.3.7 // indirect
 )

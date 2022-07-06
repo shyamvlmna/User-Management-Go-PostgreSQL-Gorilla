@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"crudapp/pkg/models"
+	"crudapp/models"
 	"fmt"
 	"html/template"
 	"net/http"
@@ -103,8 +103,7 @@ func UserLogin(w http.ResponseWriter, r *http.Request) {
 //UserHome function execute only if there is a valid cookie
 func UserHome(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Cache-Control", "no-cache,no-store,must-revalidate")
-	// params := mux.Vars(r)
-	// username := params["username"]
+
 	username := r.FormValue("username")
 
 	if c, err := r.Cookie(username); err == http.ErrNoCookie {

@@ -1,7 +1,7 @@
 package router
 
 import (
-	"crudapp/pkg/controllers"
+	"crudapp/controllers"
 
 	"github.com/gorilla/mux"
 )

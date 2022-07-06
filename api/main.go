@@ -1,7 +1,7 @@
 package main
 
 import (
-	"crudapp/pkg/router"
+	"crudapp/router"
 	"net/http"
 )
 
